@@ -45,7 +45,7 @@ export function loadExtendscript(fileName: string): Promise<any> {
       .join("/");
 
     evalScript(`$.evalFile("${filePath}")`, function(result) {
-      if (!result || result === "undefined") return resolve();
+      if (!result || result === "undefined") return resolve(null);
 
       try {
         result = JSON.parse(result);
@@ -79,7 +79,7 @@ export function evalExtendscript(script: string): Promise<any> {
     var doEvalScript = function() {
       evalScript(script, function(executionResult: any) {
         if (!executionResult || executionResult === "undefined")
-          return resolve();
+          return resolve(null);
 
         try {
           executionResult = JSON.parse(executionResult);

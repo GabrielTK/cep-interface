@@ -60,7 +60,7 @@ interface Window {
     Buffer: Buffer
     global: Window
     process: NodeJS.Process
-    require: NodeRequireFunction
+    require: NodeJS.Require
     __dirname: string
     __filename: string
   }
